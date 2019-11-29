@@ -1,7 +1,13 @@
 /* this is sign up and login page
 user can sign up and login depends upon their situation
+everything is handled with redux
  */
-
+import {connect} from 'react-redux';
+import {
+  emailChanged,
+  passwordChanged,
+  loginUser
+} from '../../../Actions/AuthenticationActions';
 import React, {Component} from 'react';
 import {Input, Button, Card} from 'react-native-elements';
 import Spacer from '../../../Components/Spacer';
@@ -26,6 +32,20 @@ class LoginNSignUp extends Component {
       })
     }
   }
+
+  onEmailChange(text) {
+    //console.log(text);
+    this.props.emailChanged(text);
+  }
+  onPasswordChange(text){
+    this.props.passwordChanged(text);
+  }
+
+  onButtonPress() {
+    const {email, password} = this.props;
+    this.props.loginUser({email, password});
+  }
+
 /*renders view to screen */
   render() {
     return (
@@ -35,6 +55,8 @@ class LoginNSignUp extends Component {
           containerStyle={styles.SpaceAroundSides}
           label="User Name"
           placeholder="Enter your User Name"
+          onChangeText={this.onEmailChange.bind(this)}
+          value={this.props.email}
         />
         <Spacer/>
         <Input
@@ -42,10 +64,13 @@ class LoginNSignUp extends Component {
           label="Password"
           placeholder="Enter your Password"
           secureTextEntry={true}
+          onChangeText={this.onPasswordChange.bind(this)}
+          value={this.props.password}
         />
         <Button
           containerStyle={styles.SpaceAroundSides}
           title={this.state.loginButtonText}
+          onPress={this.onButtonPress.bind(this)}
         />
         <Button
           containerStyle={styles.buttonAtBottomOfScreen}
@@ -69,4 +94,16 @@ const styles = StyleSheet.create({
   }
 });
 
-export default LoginNSignUp;
+//
+const mapStateToProps = state => {
+  return {
+    email: state.email,
+    password: state.password
+  };
+};
+
+
+export default connect(
+  mapStateToProps,
+  {emailChanged, passwordChanged, loginUser},
+)(LoginNSignUp);
