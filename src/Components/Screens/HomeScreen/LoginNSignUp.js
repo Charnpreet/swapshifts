@@ -54,7 +54,9 @@ class LoginNSignUp extends Component {
         <Input
           containerStyle={styles.SpaceAroundSides}
           label="User Name"
-          placeholder="Enter your User Name"
+          placeholder="Enter your Email"
+          errorStyle={{color: 'red'}}
+          errorMessage={this.props.userNameError}
           onChangeText={this.onEmailChange.bind(this)}
           value={this.props.email}
         />
@@ -63,6 +65,8 @@ class LoginNSignUp extends Component {
           containerStyle={styles.SpaceAroundSides}
           label="Password"
           placeholder="Enter your Password"
+          errorStyle={{color: 'red'}}
+          errorMessage={this.props.passwordError}
           secureTextEntry={true}
           onChangeText={this.onPasswordChange.bind(this)}
           value={this.props.password}
@@ -97,8 +101,10 @@ const styles = StyleSheet.create({
 //
 const mapStateToProps = state => {
   return {
-    email: state.email,
-    password: state.password
+    email: state.auth.email,
+    password: state.auth.password,
+    userNameError: state.auth.userNameError,
+    passwordError: state.auth.passwordError
   };
 };
 
