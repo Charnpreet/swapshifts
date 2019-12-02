@@ -6,10 +6,11 @@ const RouterComponent = () => {
   return (
     <Router>
       <Scene key="root" hideNavBar>
-        <Scene key="login" component={LoginNSignUp} initial />
+        <Scene key="login" component={LoginNSignUp} />
       </Scene>
     </Router>
   );
 };
 
 export default RouterComponent;
+// <Scene key="main" component={CreateAppContainer} initial />
