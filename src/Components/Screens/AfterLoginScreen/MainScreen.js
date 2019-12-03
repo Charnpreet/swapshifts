@@ -1,15 +1,16 @@
 import React from 'react';
-import {createAppContainer} from 'react-navigation';
+import {createAppContainer} from '@react-navigation/native';
 import {createDrawerNavigator} from 'react-navigation-drawer';
 import {createStackNavigator} from 'react-navigation-stack';
 import Icon from 'react-native-vector-icons/Feather';
 import HomeScreen from '../DrawerScreens/HomeScreen';
-import SettingsScreen from '../DrawerScreens/SettingsScreen';
+import AvailabilityScreen from '../DrawerScreens/Availability/AvailabilityScreen';
 import {StyleSheet} from 'react-native';
+
 const DrawerNavigator = createDrawerNavigator(
   {
     Home: HomeScreen,
-    Settings: SettingsScreen,
+    Availability: AvailabilityScreen
   },
   {
     hideStatusBar: true,
@@ -22,15 +23,12 @@ const DrawerNavigator = createDrawerNavigator(
   }
 );
 
-// function onMenuIconPressed(props) {
-//   this.props.navigation.toggleDrawer();
-// }
+
 const stackNavigator = createStackNavigator({
     defaultHome: DrawerNavigator,
 },
 {
     defaultNavigationOptions: ({navigation}) => {
-      //{navigation}
       return {
         title: 'Home',
         headerLeft: (
@@ -53,9 +51,10 @@ const stackNavigator = createStackNavigator({
     },
   },
 );
+
 const styles = StyleSheet.create({
   menuIconMargin: {
-    marginLeft: 10,
+    marginLeft: 10
 },
 });
-export default createAppContainer(stackNavigator);
+export default createAppContainer(stackNavigator); //stackNavigator
