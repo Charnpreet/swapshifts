@@ -4,7 +4,7 @@ import {
   LOGIN_USER,
   LOGIN_USER_SUCCESS,
   EMAIL_BLANK,
-  PASS_BLANK
+  PASS_BLANK,
 } from '../Actions/ActionTypes';
 //insital state of signup and login screen
 const INTIAL_STATE = {
@@ -12,7 +12,7 @@ const INTIAL_STATE = {
   password: '',
   user: null,
   userNameError: '',
-  passwordError: ''
+  passwordError: '',
 };
 export default (state = INTIAL_STATE, action) => {
   switch (action.type) {
