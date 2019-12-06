@@ -5,16 +5,26 @@ import {createStackNavigator} from 'react-navigation-stack';
 import Icon from 'react-native-vector-icons/Feather';
 import HomeScreen from '../DrawerScreens/HomeScreen';
 import AvailabilityScreen from '../DrawerScreens/Availability/AvailabilityScreen';
+import ChatScreen from '../DrawerScreens/ChatScreen';
+import LogOutScreen from '../DrawerScreens/LogOutScreen';
+import ProfileScreen from '../DrawerScreens/ProfileScreen';
+import SwapShiftScreen from '../DrawerScreens/SwapShiftScreen';
 import {StyleSheet} from 'react-native';
+import drawerContentComponents from '../DrawerScreens/DrawerCustomization';
 
 const DrawerNavigator = createDrawerNavigator(
   {
     Home: HomeScreen,
-    Availability: AvailabilityScreen
+    Availability: AvailabilityScreen,
+    Chat: ChatScreen,
+    Profile: ProfileScreen,
+    Swap_Shift: SwapShiftScreen,
+    Log_Out: LogOutScreen,
   },
   {
+    //contentComponent: drawerContentComponents,
     hideStatusBar: true,
-    drawerBackgroundColor: 'rgba(255,255,255,.9)',
+    drawerBackgroundColor: 'white',
     overlayColor: '#6b52ae',
     contentOptions: {
       activeTintColor: '#fff',
@@ -54,7 +64,7 @@ const stackNavigator = createStackNavigator({
 
 const styles = StyleSheet.create({
   menuIconMargin: {
-    marginLeft: 10
-},
+    marginLeft: 10,
+  },
 });
 export default createAppContainer(stackNavigator); //stackNavigator

@@ -83,7 +83,6 @@ class PermanentAvailability extends Component {
     return (
       <View>
         <FlatList
-          style={styles.ListStyling}
           extraData={this.state}
           keyExtractor={item => item.day}
           data={this.state.daysOfWeek}
