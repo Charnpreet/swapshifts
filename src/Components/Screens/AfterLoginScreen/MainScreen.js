@@ -22,14 +22,14 @@ const DrawerNavigator = createDrawerNavigator(
     Log_Out: LogOutScreen,
   },
   {
-    //contentComponent: drawerContentComponents,
-    hideStatusBar: true,
-    drawerBackgroundColor: 'white',
-    overlayColor: '#6b52ae',
-    contentOptions: {
-      activeTintColor: '#fff',
-      activeBackgroundColor: '#6b52ae',
-    },
+    contentComponent: drawerContentComponents,
+    // hideStatusBar: true,
+    // drawerBackgroundColor: 'white',
+    // overlayColor: '#6b52ae',
+    // contentOptions: {
+    //   activeTintColor: '#fff',
+    //   activeBackgroundColor: '#6b52ae',
+    // },
   }
 );
 

@@ -75,8 +75,6 @@ class CasualAvailability extends Component {
 //  this renders item on the screen
   renderItems = ({item, index}) => {
    let itemchecked = {...this.state.CasualAvailability};
-
-   console.log(itemchecked[index].isAMChecked);
     return (
       <View style={styles.RenderItemFunViewTagStyle}>
         <Text style={styles.textViewHeightWidth}>{item.date}</Text>

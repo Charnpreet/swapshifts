@@ -20,7 +20,7 @@ class PermanentAvailability extends Component {
   // which helps to determine which checkbox needs to be checked
   handleChange = (index, checkboxToBeChecked) => {
 
-     let checked = {...this.state};
+    let checked = {...this.state};
     switch (checkboxToBeChecked) {
       case 'AM':
         checked.daysOfWeek[index].isAMChecked = !checked.daysOfWeek[index].isAMChecked;
