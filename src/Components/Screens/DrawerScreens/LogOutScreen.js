@@ -4,7 +4,7 @@ class LogOutScreen extends Component {
   render() {
     return (
       <View style={styles.ViewTagStyle}>
-        <Text>Log out Screen</Text>
+        <Text>Comming soon</Text>
       </View>
     );
   }

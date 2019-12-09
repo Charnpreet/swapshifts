@@ -4,7 +4,7 @@ class ChatScreen extends Component {
   render() {
     return (
       <View style={styles.ViewTagStyle}>
-        <Text>Log out Screen</Text>
+        <Text>Chat screen Comming soon</Text>
       </View>
     );
   }

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet} from 'react-native';
-import {Image, Card} from 'react-native-elements';
+import {Text, View, StyleSheet, Alert} from 'react-native';
+import {Image, Card, Avatar} from 'react-native-elements';
 class ProfileScreen extends Component {
   render() {
     return (
@@ -8,10 +8,25 @@ class ProfileScreen extends Component {
         <Card containerStyle={styles.CardStyling}>
           <Image
             style={styles.Image}
-            source={require('../../../../assets/forest.jpg')}
+            source={require('../../../../assets/mountain.jpg')}
           />
         </Card>
         <Card containerStyle={styles.inputDetailsCardStyling}>
+          <View style={styles.AvatarViewTagStyle}>
+            <Avatar
+            rounded
+            size="xlarge"
+              source={require('../../../../assets/mountain.jpg')}
+              showEditButton
+              onEditPress={() =>
+                Alert.alert(
+                  'soon i will be able to upon your camera and gallery',
+                )
+
+              }
+            />
+          </View>
+          <View style={styles.listSeperatorStyle} />
           <Text style={styles.TextSizedetails}>Name: Charnpreet Singh</Text>
           <View style={styles.listSeperatorStyle} />
           <Text style={styles.TextSizedetails}>Email: sony_baf@me.com </Text>
@@ -22,7 +37,6 @@ class ProfileScreen extends Component {
           <View style={styles.listSeperatorStyle} />
         </Card>
       </View>
-
     );
   }
 }
@@ -61,6 +75,14 @@ const styles = StyleSheet.create({
   },
   TextSizedetails:{
     fontSize: 22,
+  },
+  AvatarViewTagStyle:{
+    backgroundColor:'transparent',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 5,
+    marginTop: -95,
+    marginBottom: 10,
   }
 });
 export default ProfileScreen;

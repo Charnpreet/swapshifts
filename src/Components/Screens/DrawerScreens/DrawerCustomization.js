@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {NavigationActions} from 'react-navigation';
-import {View,Text, StyleSheet} from 'react-native';
-import {Card,Button, Image} from 'react-native-elements';
+import {View, Text, StyleSheet, Alert} from 'react-native';
+import {Card,Button, Image, Avatar} from 'react-native-elements';
 
 export default class DrawerCustomization  extends Component {
   //
@@ -15,9 +15,11 @@ export default class DrawerCustomization  extends Component {
     return (
       <View style={styles.container}>
         <Card containerStyle={styles.CardStyling}>
-          <Image style={styles.Image}
-            source={require('../../../../assets/forest.jpg')}
-         />
+        <Avatar
+          source={require('../../../../assets/forest.jpg')}
+            size="xlarge"
+            rounded
+        />
            <Text style={styles.TextSizedetails}>Chanrpreet Singh</Text>
            <Text style={styles.TextSizedetails}>sony_baf@me.com</Text>
         </Card>
@@ -90,7 +92,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     marginBottom: 1,
     flexDirection:'row',
-    borderColor: 'black',
+    borderColor: 'transparent',
     height: '25%',
   },
   buttonStyle:{
@@ -116,7 +118,8 @@ const styles = StyleSheet.create({
   },
   TextSizedetails:{
     fontSize: 18,
-    marginTop:-1,
+    marginTop:5,
+    marginBottom:5,
     flexWrap: 'wrap',
     backgroundColor: 'transparent',
   }
