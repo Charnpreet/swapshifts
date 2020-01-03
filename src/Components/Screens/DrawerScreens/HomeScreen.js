@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
+import firebase from 'firebase';
 import {Text, TouchableOpacity, View, StyleSheet} from 'react-native';
 class HomeScreen extends Component {
   render() {
+    const {currentUser} = firebase.auth();
     return (
       <View style={styles.ViewTagStyle}>
         <TouchableOpacity onPress={this.props.navigation.openDrawer}>
           <Text>Open Drawer</Text>
         </TouchableOpacity>
-        <Text style={styles.TextTagStyle}>Home</Text>
+        <Text style={styles.TextTagStyle}>{currentUser.email}</Text>
       </View>
     );
   }

@@ -1,5 +1,4 @@
 import React from 'react';
-import {createAppContainer} from '@react-navigation/native';
 import {createDrawerNavigator} from 'react-navigation-drawer';
 import {createStackNavigator} from 'react-navigation-stack';
 import Icon from 'react-native-vector-icons/Feather';
@@ -11,7 +10,6 @@ import ProfileScreen from '../DrawerScreens/ProfileScreen';
 import SwapShiftScreen from '../DrawerScreens/SwapShiftScreen';
 import {StyleSheet} from 'react-native';
 import drawerContentComponents from '../DrawerScreens/DrawerCustomization';
-
 const DrawerNavigator = createDrawerNavigator(
   {
     Home: HomeScreen,
@@ -23,13 +21,6 @@ const DrawerNavigator = createDrawerNavigator(
   },
   {
     contentComponent: drawerContentComponents,
-    // hideStatusBar: true,
-    // drawerBackgroundColor: 'white',
-    // overlayColor: '#6b52ae',
-    // contentOptions: {
-    //   activeTintColor: '#fff',
-    //   activeBackgroundColor: '#6b52ae',
-    // },
   }
 );
 
@@ -67,4 +58,4 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
 });
-export default createAppContainer(stackNavigator); //stackNavigator
+export default stackNavigator;
